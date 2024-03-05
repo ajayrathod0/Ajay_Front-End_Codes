@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scipts/JQuery.min.js"></script>
+</head>
+<body>
+    <h2>Get Set Attribute</h2>
+    <table>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" id="pwd" />
+                <input type="checkbox" id="cbAction" />
+            </td>
+        </tr>
+    </table>
+
+    <input type="button" value="Get Attribute Value" id="btn1" />
+    |
+    <input type="button" value="Download" id="btn2" />
+    <hr />
+
+    <a href="http://www.google.com" target="_blank" id="a1">Visit Google</a>
+    <a id="a2">Visit FaceBook</a>
+
+    <textarea rows="8" cols="68" id="result"></textarea>
+
+
+    <script>
+        $(function () {
+
+            // ----------------------------------   Get Attibute   ------------------------------------
+            $('#result').val(''); //result ko emt rakhate hai pahle O/p dikhane ke liye
+
+            $('#btn1').click(function () { //jab click karenge button par
+                var a = $('#a1').attr('href') // attr function a1 id par href attribute ka value get karke
+                $('#result').val(`${a}\n`); //denga
+
+                a = $('#a1').attr('target');
+                var ans = $('#result').val();
+                $('#result').val(`${ans} ${a}\n`);
+
+
+
+                // ---------------------   Set Attribute ------------------------------
+
+                //$('#a2').attr('href','http://www.facebook.com'); //agar set karna hai attribute to second parameter ne denge
+                //$('#a2').attr('target', '_blank');
+
+                //agar ek se jyada attibute set karna hai to ek hi time to { } uski body banayenge attr() ki
+                $('#a2').attr({
+                    "style": "background-color:red; color:black;",
+                    'href': 'http://www.instagram.com;',
+                    "target": '_self;'
+
+                });
+
+            });
+
+            $('#btn2').click(function () {
+                var valu = $(this).attr('value');
+                var check = (valu == 'Download') ? 'Processing' : 'Download';
+                $(this).attr('value', check); //value me jan download rahenga click karne par processing aayenga
+                $(this).attr('disabled', 'disabled'); // disabled se button click nahi honga disable ho jayenga
+            });
+
+            //password hide show kar sakte hai check box par check karte hi
+            $('#cbAction').click(function () { 
+                var a = $(this).prop('checked');
+                if (a == true) { //jab box ko check karte hai to true return karta hai
+                                // agar check kare to if ke under jayenga condition match hongi
+                    $('#pwd').attr('type', 'text'); // pw show karenga 
+                } else {
+                    $('#pwd').attr('type', 'password'); //agar pw show hai to check karne par hide karenga
+                }
+            });
+
+
+        });
+
+    </script>
+</body>
+</html>

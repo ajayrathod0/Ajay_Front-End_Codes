@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h2>Input Events</h2>
+    <input type="text" id="txt" onfocus="txtfocus()"
+           onblur="txtblur()" onkeyup="txtkeyup(event)" />
+    <br />
+
+
+    Select City:
+    <select id="city" onchange="citychange()">
+        <option value="-1">--- Select City ---</option>
+        <option value="indore">Indore</option>
+        <option value="pune">Pune</option>
+        <option value="mumbai">Mumbai</option>
+
+    </select>
+
+    <br />
+    <span id="cityerror" style="color:red;"></span>
+
+    <hr />
+
+
+    <textarea rows="5" cols="60" id="result"></textarea>
+
+    <script src="Script/inputevent.js"></script>
+</body>
+</html>

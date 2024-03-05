@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h2> Get Set Content </h2>
+
+    <!--Password show ke liye-->
+
+    Password:<input type="password" id="password" />
+    <input type="checkbox" id="chkshowhide" onchange="pwdShowHide()"/>
+    <br /><br />
+
+
+
+    <!--get comtent ke liye-->
+
+    <input type="text" id="txt1" />
+    <p id="p1">Paragraph text</p>
+    <div id="div1">
+        <span>Span Content</span>
+        <a id="a1" href="http://www.google.com">Visit google</a>
+    </div>
+    <hr />
+
+
+    <input type="button" value="Get Content" onclick="getContent()" />|
+    <input type="button" value="Set Content" onclick="setContent()" />
+    <br />
+
+    <!--set comtent ke liye-->
+    <input type="text" id="txt2" />
+    <p id="p2"></p>
+    <div id="div2"></div>
+
+
+
+    <script src="Script/getsetcontent.js"></script>
+</body>
+</html>

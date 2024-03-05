@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #div1 {
+            background-color: lightcoral;
+            height: 180px;
+            width: 35%;
+            border: 1px solid black;
+            border-radius: 10px;
+            text-align: center;
+            /*            display: none;
+        */
+        }
+
+        button {
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            height: 3rem;
+            width: 77vh;
+            border-radius: 10px;
+            color: white;
+            background-color: #b685e3;
+        }
+    </style>
+    <script src="Scipts/JQuery.min.js"></script>
+</head>
+<body>
+    <h2>Effect code</h2>
+
+    <button>click me!!</button>
+    <br /><br />
+    <div id="div1">
+        jQuery is a JavaScript Library. <br />
+
+        jQuery greatly simplifies JavaScript programming. <br />
+
+        jQuery is easy to learn.
+
+    </div>
+
+    <script>
+        $(function () {
+            $('button').click(function () {
+
+
+
+                //-------------   Hide() , Show() , Toggle()   -------------------------------------------
+
+                // $('#div1').hide(); //hide ho jayenga div ka contain
+                // $('#div1').show(); //background none hai kiya css me to show function se show ho jayenga div
+                // $('#div1').toggle();  //combinatoin hide + show dono honge hide hai to show honga agat show hai to hide honga
+
+
+
+
+
+
+
+                //-----------  FadeIn() , FadeOut() ,FadeTo , FadeToggle -------------------------------------
+
+                // $('#div1').fadeIn(5000); // fade in karne ke liye usko div ko hide karna padenga tab fade in honga dere dere
+                //$('#div1').fadeOut(10000);// fade out hide ko show karta hai jitna durtaion do utne time me
+                //$('#div1').fadeToggle(10000); // combination both
+                // $('#div1').fadeTo(1000, 0.5); // hide hai to 0.5 opicitiy (brightness) se show honga
+
+                /* $('#div1').fadeTo(1000, 0.2, function () {
+                     alert('Effect Completed..');
+                 });*/
+
+
+
+
+
+
+
+                //------------- slide Down() , slideUp() , slideToggle()
+
+                //$('#div1').slideUp(5000); //bottum to top slide hote hide honga
+                // $('#div1').slideDown(5000); //top to bottum slide hote show honga
+                //  $('#div1').slideToggle(5000);  // both combination slideUp() and slideDown()
+
+
+
+
+
+                //-------------- animate() ------------
+
+                /*$('#div1').animate({ width: '+=100px' }); // div ka contein ka width badenga 100px move karenga
+                $('#div1').animate({ height: '+=100px' });
+                $('#div1').animate({ width: '-=100px' });
+                $('#div1').animate({ height: '-=100px' });
+*/
+
+               /* $('#div1').slideUp(5000); //5 second durstion me slide up honga
+                setInterval(stopanimate, 2000)//jab 5 me se 2 second ho jayenga tab stop ho jayenga stop() function ke vajah se
+
+                function stopanimate() {
+                    $('#div1').stop();
+                }
+*/
+
+
+
+                //method chaining / function chaining / event chaining
+                //normal way
+               /* $('#div1').slideUp(3000);
+                $('#div1').slideDown(300);
+                $('#div1').css('background', 'yellow');*/
+
+                //with method chaining
+                $('#div1').slideUp(3000).slideDown(3000).css('background','lightblue')
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>

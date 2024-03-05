@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script src="Scipts/JQuery.min.js"></script>
+    <script>
+
+        //ready function syntax 1 
+       /* $('document').ready( function(){
+            document.getElementById('heading').style.color = 'red';
+        });*/
+
+        //ready function syntax 2
+       /* $(function () {
+            document.getElementById('heading').style.backgroundColor = 'black';
+        })
+*/
+
+        jQuery(function () {//jQuery ko '$' ya 'JQuery' hi pata hai 
+            jQuery('#heading').css('color', 'yellow');
+        });
+
+
+        // agar uski jagah kuch or name dena hai to noConflict() name ka function hai usko batana badenga
+       ajay =  $.noConflict();
+        ajay(function () {
+            ajay('#heading').css('backgroundColor','green');
+        });
+
+
+    </script>
+</head>
+<body>
+    <h2 id="heading">JQuery Intro</h2>
+
+</body>
+</html>

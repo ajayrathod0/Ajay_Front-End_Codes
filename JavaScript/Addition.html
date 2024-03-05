@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> javaScript 1 session</title>
+</head>
+<body>
+
+    <table>
+        <h1>ADD two number</h1>
+
+        <tr>
+            <td>First Number</td>
+            <td>
+                <input type="text" id="first" />
+            </td>
+        </tr>
+        <tr>
+            <td>Second Number</td>
+            <td>
+                <input type="text" id="second" />
+            </td>
+        </tr>
+        <tr>
+
+            <td colspan="2">
+                <input type="button" value="Add two number" onclick="added()" />
+            </td>
+        </tr>
+        <tr>
+            <td>Result</td>
+            <td>
+                <input type="text" id="result" />
+            </td>
+        </tr>
+    </table>
+
+    <script>
+
+        
+
+        function added() {
+
+            var first = document.getElementById("first").value
+            var second = document.getElementById("second").value
+
+            var add = parseInt(first) + parseInt(second)
+
+            document.getElementById("result").value = add;
+
+
+        }
+    </script>
+
+</body>
+</html>

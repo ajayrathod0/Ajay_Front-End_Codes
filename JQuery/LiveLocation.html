@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+</head>
+<body >
+
+    <div id="map" style="height: 400px; width: 100%;">
+
+    </div>
+    <button onclick="initMap()">Get Your Live Location</button>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCdmk1_4B1BHykzedbM7uDeSidMLdtX7o"></script>
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: -34.397, lng: 150.644 }, // Default center (Sydney, Australia)
+                zoom: 15
+            });
+
+            // Try HTML5 geolocation to get the user's current location
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    // Center the map on the user's location
+                    map.setCenter(pos);
+
+                    // Add a marker at the user's location
+                    var marker = new google.maps.Marker({
+                        position: pos,
+                        map: map,
+                        title: 'You are here'
+                    });
+                }, function () {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                });
+            } else {
+                // Browser doesn't support Geolocation
+                handleLocationError(false, infoWindow, map.getCenter());
+            }
+        }
+
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            var infoWindow = new google.maps.InfoWindow;
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(browserHasGeolocation ?
+                'Error: The Geolocation service failed.' :
+                'Error: Your browser doesn\'t support geolocation.');
+            infoWindow.open(map);
+        }
+    </script>
+</body>
+</html>

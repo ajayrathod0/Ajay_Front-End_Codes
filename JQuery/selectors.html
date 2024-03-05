@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <button id="btn">click me !!! </button>
+    <p name="1st">first P tag</p>
+    <p>second P</p>
+    <p>Third P</p>
+
+    <div>
+        <p>P tag [inner div]</p>
+    </div>
+
+    <table border="1">
+        <tr>
+            <td>101 </td>
+            <td>Ajay</td>
+            <td>Pune</td>
+        </tr>
+        <tr>
+            <td>102 </td>
+            <td>vishal</td>
+            <td>Pune</td>
+        </tr>
+        <tr>
+            <td>103 </td>
+            <td>Ajay</td>
+            <td>mumbai</td>
+        </tr>
+        <tr>
+            <td>104 </td>
+            <td>Ajay</td>
+            <td>indore</td>
+        </tr>
+        <tr class="in">
+            <td>105 </td>
+            <td>Ajay</td>
+            <td>surat</td>
+        </tr>
+    </table>
+    <ul>
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Milk</li>
+    </ul>
+    <ul>
+        <li>Wada pav</li>
+        <li>Samosa</li>
+        <li>idli</li>
+    </ul>
+
+    <script src="Scipts/JQuery.min.js"></script>
+    <script>
+        $('#btn').click(function () {
+            // $('p').css('color', 'red');
+            // $('p:first').css('background-color', 'red');
+            //$('p:last').css('background-color', 'red');
+            //$('*').css('background-color', 'black');
+            // $(this).css('background-color','yellow');
+            // $('tr:odd').css('background-color', 'red');
+            //  $('tr:even').css('background-color', 'yellow');
+            // $('[name]').css('background-color','black'); //attribute name wale sare
+            //  $('div p').css('background-color', 'red');
+            // $('li:first').css('background-color', 'green');
+            //$('li:first-child').css('background-color','green');
+            $('p:eq(1)').css('background-color', 'red'); //p ke sare tag me starting ke  index 1 wala only
+        });
+
+    </script>
+
+</body>
+</html>

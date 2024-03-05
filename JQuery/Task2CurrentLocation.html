@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #btn {
+            height: 33px;
+            width: 103px;
+            border-radius: 8px;
+            color: white;
+            background-color: blueviolet;
+            border-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Current location</h2>
+    <table>
+        <tr>
+            <td>Location</td>
+            <td>
+                <textarea cols="70" rows="8" id="result"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="Get Location" id="btn" />
+            </td>
+        </tr>
+    </table>
+    <script src="Scipts/JQuery.min.js"></script>
+
+    <script>
+        $(function () {
+            //current location
+            $('#btn').on('click', function () {
+
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    console.log(position.coords);
+                    var { latitude, longitude } = position.coords;
+
+                  $('#result').text(`latitude:${latitude} longitude :${longitude}`);
+
+                }, function (error) {
+                    alert(`error.massage`);
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>

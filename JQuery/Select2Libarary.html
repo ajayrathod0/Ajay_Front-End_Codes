@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Select2 Library</h1>
+
+    <select id="selectt" style="display:flex;justify-content:center;">
+        <option>-- select city --</option>
+        <option>Indore</option>
+        <option>pune</option>
+        <option>mumbai</option>
+        <option>delhi</option>
+        <option>surat</option>
+        <option>benglore</option>
+        <option>nashik</option>
+        <option>ujjain</option>
+        <option>bhopal</option>
+        <option>jabalpur</option>
+        <option>kashi</option>
+
+    </select>
+    <script src="Scipts/JQuery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        $(function () {
+
+            $('#selectt').select2();
+        });
+    </script>
+</body>
+</html>

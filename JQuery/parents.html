@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #maindiv * {
+            border: 3px solid black;
+            color: black;
+            margin: 29px;
+            padding: 9px;
+            display: block;
+        }
+
+        #mainDiv {
+            border: 1px solid green;
+            color: black;
+            padding: 5px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Traversing Demo</h2>
+    <input type="button" value="Click me!!!" id="btn" />
+
+    <div id="maindiv">
+        Main Div
+        <div>
+            First Div
+            <div>
+                Inner Div
+                <h2>heading 2</h2>
+                <div>div content</div>
+                <p>Paragraph Text</p>
+                <span>Span Content</span>
+                <a>a tag</a>
+                <h2>heading 2</h2>
+                <h3>heading 3</h3>
+                <span>span content</span>
+            </div>
+        </div>
+        <div>
+            Second Div
+        </div>
+    </div>
+
+    <script src="Scipts/JQuery.min.js"></script>
+    <script>
+
+        $(function () {
+            $('#btn').click(function () {
+                // $('span').css({ 'color': 'red', 'border': '1px solid red' }); // sare span tag select honge
+                // $('span').parent().css({ 'color': 'red', 'border': '1px solid red' }); //inner div kyu span ka parent hai vo
+                // $('span').parents().css({ 'color': 'red', 'border': '1px solid red' }); //inner ,first , main div , body , html sare parents hai vo sare
+                // $('span').parentsUntil('#maindiv').css({ 'color': 'red', 'border': '1px solid red' }); // inner or first div until matlb uske pahale tak
+
+
+                //$('#maindiv').children().css({ 'color': 'red', 'border': '1px solid red' });//first or second div only two hi child hai
+                //$('#maindiv').find('p').css({ 'color': 'red', 'border': '1px solid red' }); // p tag child me select jitne bhi hai sare
+
+
+                //$('a').siblings().css({ 'color': 'red', 'border': '1px solid red' }); // a tag ke sare siblings tag jo same parent ke ho
+                //$('a').nextAll().css({ 'color': 'red', 'border': '1px solid red' }); // a tag ke next jo aage aane wale hai vo sare siblings
+                //$('a').next().css({ 'color': 'red', 'border': '1px solid red' }); //only next jo aayenga vahi ek sibling
+                //$('a').nextUntil('span').css({ 'color': 'red', 'border': '1px solid red' });// a tag ke aane wale next span ke bich me sare select ho jayenge
+
+                //$('a').prev().css({ 'color': 'red', 'border': '1px solid red' }); // a tag ke pahale wala
+                // $('a').prevAll().css({ 'color': 'red', 'border': '1px solid red' }); // a tag ke sare pahale wale siblings
+                $('a').parentsUntil('div').css({ 'color': 'red', 'border': '1px solid red' });//a tag ke pahle se start or div tag ke bich ke jo siblings hai vo sare 
+            });
+        });
+
+    </script>
+
+</body>
+</html>

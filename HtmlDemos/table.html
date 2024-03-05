@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+
+
+        span {
+            color: red
+        }
+
+        .main {
+            width: 96rem;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            border-radius: 2rem;
+            background-color: aqua;
+            justify-items: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        button {
+            border-radius: 3vh;
+            color: azure;
+            background-color: blue;
+            height: 7vh;
+            width: 16vh;
+            border: none;
+        }
+       
+
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <tr>
+            <td> Name<span>*</span> :</td>
+
+            <input type="text" placeholder="Enter your Name" />
+        </tr>
+        <br />
+        <br />
+        <tr>
+            <td>
+                Password<span>*</span>:
+            </td>
+            <input type="password" placeholder="Password" />
+            <br />
+        </tr>
+        <br />
+        <tr>
+            <td>
+                Address:
+            </td>
+            <textarea rows="5"></textarea>
+        </tr>
+        <br />
+
+        <br />
+        <tr>
+            <td>
+                DOB<span>*</span>:
+            </td>
+            <input type="date" />
+        </tr>
+        <br />
+        <br />
+
+        <tr>
+            <td>
+                Gender<span>*</span>:
+            </td>
+            <input type="radio" name="Gender" />
+            <label>male</label>
+            <input type="radio" name="Gender" />
+            <label>famale</label>
+
+
+        </tr>
+        <br />
+        <br />
+        <tr>
+
+            <td>
+                Education<span>*</span>
+            </td>
+            <td>
+                <input type="checkbox" />SSC
+                <input type="checkbox" />HSC
+                <input type="checkbox" />Diploma
+                <input type="checkbox" />B.tech
+                <input type="checkbox" />M.tech
+
+            </td>
+        </tr>
+        <br />
+        <br />
+
+        <tr>
+            <td>
+                City :
+            </td>
+            <select>
+                <option>-- Select City -- </option>
+                <option>Indore</option>
+                <option>Pune</option>
+                <option>Mumbai</option>
+            </select>
+        </tr>
+        <br/>
+        <br/>
+        <button>Submit</button>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h2> API To Fetch Users</h2>
+    <table>
+
+        <thead>
+            <tr>
+                <th> Id</th>
+                <th> Name</th>
+                <th>Username</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="users"></tbody>
+    </table>
+    <script src="Scipts/JQuery.min.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                url: 'https://jsonplaceholder.typicode.com/users',
+                type: 'GET',
+                success: function (responce) {
+                    //alert('Call Success');
+                  //  console.log(responce); //url se 10 user ke record dikhenge console me
+
+                    var trs = ' ';
+                    for (var a of responce) {
+                        trs += ` <tr>
+                        <td> ${a.id}</td>
+                        <td> ${a.name}</td>
+                        <td> ${a.username}</td>
+                        <td> ${a.email}</td>
+                        </tr>`
+                    }
+                    $('#users').html(trs); //jo trs ka dare users id textarea me show karenge
+                },
+                error: function () {
+                    alert('Call failed');
+                },
+
+
+            });
+
+        });
+    </script>
+</body>
+</html>

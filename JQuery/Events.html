@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script src="Scipts/JQuery.min.js"></script>
+
+</head>
+<body>
+    <h2>Events</h2>
+
+    <input type="text" id="txt" /><br /><br/>
+
+    <label id="lbl"></label><br/><br />
+
+
+    <button>Click Me !!!</button>
+
+
+    <script>
+        $(function () {
+            /*$('button').click(function () { //button click karne par
+                $(this).hide(); //current intence matlab ki button hi hide ho jayenga
+            });*/
+
+
+            /* $('button').mouseenter(function () { //mouse/cursor button par le jane par color red honga
+                 $(this).css('color', 'red');
+             });
+             $('button').mouseout(function () {//mouse/cursor button par le jane par color blue honga
+                 $(this).css('color','blue');
+             });*/
+
+
+            //hover function handle both event mouseenter + out
+            /*  $('button').hover(function () {
+                  $(this).css('background', 'green'); //mouseenter ke liye
+              }, function () {
+                  $(this).css('background', 'red'); //mouseout ke liye
+              });*/
+
+
+            //on() function ragistering multiple events at once
+            /*$('button').on('click', function () {
+                $(this).hide();
+            });*/
+
+            $('button').on({
+                click: function () { $(this).css('background', 'lightblue') },
+                mouseenter: function () { $(this).css('color', 'red') },
+                mouseleave: function () { $(this).css('background', 'black') },
+                dblclick: function () { $(this).attr('value', 'button clicked !!') }
+            });
+
+            $('#txt').focus(function () {
+                $(this).css('background','green');
+            });
+
+            $('#txt').blur(function () {
+                $(this).css('background','blue');
+            })
+
+
+            $('#txt').keyup(function () { //jo  type karenge vah labal tag me dikhenge
+                var val = $(this).val();
+                $('#lbl').text(val);
+            });
+
+            $(document).scroll(function () {
+                alert('starting scrolling.....');
+            });
+
+        });
+    </script>
+</body>
+</html>

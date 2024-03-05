@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scipts/JQuery.min.js"></script>
+</head>
+<body>
+    <h2>Add Elements</h2>
+    <input type="button" id="btn" value="Click Me!!" />
+
+    <div>
+        <p id="p1"><b>Original Paragrap Text</b></p>
+    </div>
+
+    <table id="tbl">
+        <tr>
+            <td>
+                <input type="text" />
+            </td>
+            <td>
+                <input type="text" />
+            </td>
+            <td>
+                <input type="button" value="+" />
+            </td>
+        </tr>
+
+    </table>
+
+    <script>
+
+        $(function () {
+            $('#btn').click(function () {
+                $('#p1').append('Hello Append'); //p tag ke content ke aakhri me add kar raha hai
+                $('#p1').prepend('Hello Prepend'); // p tag ke content ke pahale add kar raha hai
+                $('#p1').after('after wala text'); //after p tag ke bahar uske bad me
+                $('#p1').before('before wala text');//before p tag ke bahar uske pahle
+            });
+
+
+            //jab table ke "value +" button par click karenge to same vaisa hii ek vaisa
+            //hi input datails form add ho jana chaiye
+            /*   $('[value ="+"]').click(function () {
+                   var add = `<tr> <td> <input type="text" /> </td>
+                                           <td> <input type="text" /></td>
+                                           <td> <input type="button" value="+" /></td>
+                                      </tr>`;
+                   $('#tbl').append(add);  //table me same table add karenga append() jab jab click karenga
+               });
+*/
+
+            //minimum 5 person in one ticket ?
+
+            var counter = 1;
+            var maxPessengers = 4;
+            $('#tbl').on("click", "[value='+']", function () {
+                if (counter <= maxPessengers) {
+                    var row = `<tr> <td> <input type="text" /> </td>
+                                                <td> <input type="text" /></td>
+                                                <td> <input type="button" value="+" /></td>
+                                           </tr>`;
+                    counter++;
+                } else {
+                    alert('Maximum 5 pessengers add in one ticket');
+                }
+
+                $('#tbl').append(row);
+            });
+
+            $('#btn').click(function () {
+                //  $('#tbl').remove(); //table ko hi remove kar denga
+                $('#tbl').empty();//table tag ko remove nahi karenge table ke under ke content ko khali kar denge
+            });
+
+        });
+
+    </script>
+</body>
+</html>

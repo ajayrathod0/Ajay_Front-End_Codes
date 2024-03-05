@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .myclass {
+            background-color: blueviolet;
+            color: darkturquoise;
+        }
+    </style>
+
+</head>
+<body>
+    <script src="Scipts/JQuery.min.js"></script>
+
+    <h2 class="myclass">Add Remove Css Classes</h2>
+    <input type="button" value="Click Me!!" id="btn" />
+    <input type="button" value="Get Set Css" id="btn2" />
+
+    <script>
+        $('#btn').click(function () {
+            //$('h2').addClass('myclass'); //addClass style jo likha hai add karenga jo bhi selector me add karna hai
+            $('h2').removeClass('myclass');// jo bhi class diya hai attribute me vah remove kar denga
+        });
+
+        $('#btn2').click(function () {
+            //Get css
+            // var ansColor = $('h2').css('color');  //pahala parameter get karne ke liye rahata hai
+            //attr()me dekha hai hamne same vaisa hi hai
+            //alert(ansColor);
+
+
+
+            //Set css
+            // $('h2').css('text-decoration', 'underline');  //h2 tag par apply ho jayengi css
+            //agar ek se css property add karna rahe to
+            $('h2').css({
+                'border': '5px dashed black ',
+                'cusor': 'pointer',
+                'align-content': 'center',
+                'justify-content': 'center',
+                'display': 'flex'
+            });
+
+
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+﻿
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.imgiconn {
+    width: 30px;
+    border-radius: 3rem;
+    border: 2px solid #75c3d1;
+}
+
+.imgiconn {
+    align-items: center;
+    text-align: right;
+    width: 20%;
+}
+
+.imgiconn2 {
+    width: 130px;
+    border-radius: 5rem;
+    border: 5px solid #75c3d1;
+}
+
+.imgposition {
+    left: 26rem;
+    margin:lef;
+    position: absolute;
+    top: 13rem;
+}
+
+label {
+    color: #102a42;
+    color: var(--label-text-color);
+    display: block;
+    font-family: Montserrat,sans-serif;
+    font-family: var(--label-text-font-family);
+    font-size: 12px;
+    font-weight: 600;
+    font-weight: var(--label-text-font-weight);
+    letter-spacing: .05em;
+    letter-spacing: var(--label-text-letter-spacing);
+    line-height: 1.6;
+    padding-bottom: 0.8rem;
+    padding-bottom: calc(var(--space-multiplier)*1rem);
+    position: relative;
+}
+
+input {
+    line-height: 2.5rem;
+    width: 15.1rem;
+}
+
+.boxflexx {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 1rem;
+    justify-content: space-evenly;
+}
+
+.profilee {
+    float: right;
+    /* display: grid; */
+    width: calc(100% - 305px);
+}
+
+.buttenbottum {
+    display: flex;
+    justify-content: space-around;
+    height: 13vh;
+    align-items: center;
+}
+
+.btn1 {
+    width: 6vw;
+    height: 6vh;
+    border-radius: 0.5rem;
+    color: rgb(67, 85, 126);
+}
+
+.btn2 {
+    height: 7vh;
+    width: 9vw;
+    border-radius: 0.5rem;
+    background: #445d8a;
+    color: white;
+    border: none;
+}
+
+.btn1:hover {
+    background-color: rgb(54, 54, 152);
+    color: white;
+}
+
+.btn2:hover {
+    background-color: rgb(54, 54, 152);
+}
+
+@media screen and (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+
+    .topbar {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .boxmedia {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .profilee {
+        float: right;
+        /* display: grid; */
+        width: calc(100% - 16px);
+    }
+
+    .imgposition {
+        left: 8rem;
+        margin: lef;
+        position: absolute;
+        top: 13rem;
+    }
+}
